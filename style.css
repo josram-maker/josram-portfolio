@@ -1,0 +1,911 @@
+
+/* =========================================
+   JOSRAM PERSONAL PORTFOLIO
+   Joshua Albert Mwendwa
+   ========================================= */
+
+
+/* 1. GLOBAL SETTINGS */
+
+:root {
+    --background: #080d19;
+    --background-light: #101a2b;
+    --card: #111d30;
+    --gold: #d9ad55;
+    --gold-light: #f1ce83;
+    --blue: #3279d5;
+    --white: #ffffff;
+    --text: #d0d8e5;
+    --muted: #8996a9;
+    --border: rgba(255,255,255,0.09);
+
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    --transition: all 0.35s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--white);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+
+/* 2. NAVIGATION BAR */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(8,13,25,0.94);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    color: var(--text);
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-button {
+    padding: 11px 19px;
+    background: var(--gold);
+    color: #111;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.nav-button:hover {
+    background: var(--gold-light);
+    transform: translateY(-3px);
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* 3. HERO SECTION */
+
+.hero {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(35,95,170,0.15),
+            transparent 35%
+        );
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #37cf89;
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0 12px #37cf89;
+}
+
+.hero-text h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(45px, 6vw, 76px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -3px;
+}
+
+.hero-text h1 span {
+    color: var(--gold);
+    display: block;
+}
+
+.hero-text h2 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    margin-top: 23px;
+    color: var(--white);
+}
+
+.hero-text h2 span {
+    color: var(--gold);
+}
+
+.hero-description {
+    color: var(--muted);
+    max-width: 550px;
+    margin: 24px 0 30px;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 23px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #101010;
+}
+
+.btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-4px);
+}
+
+.btn-outline {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+    color: #111;
+}
+
+
+/* SOCIAL LINKS */
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.social-links a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text);
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+    transform: translateY(-4px);
+}
+
+
+/* 4. PROFILE PHOTOGRAPH */
+
+.hero-image {
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+    margin: auto;
+}
+
+.image-decoration {
+    position: absolute;
+    inset: -15px 15px 15px -15px;
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    opacity: 0.65;
+    z-index: 0;
+}
+
+.profile-photo {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 25px 65px rgba(0,0,0,0.45);
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px 18px 17px;
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.95)
+    );
+    z-index: 2;
+    border-radius: 0 0 10px 10px;
+}
+
+.image-caption span {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.image-caption small {
+    color: var(--gold-light);
+    font-size: 10px;
+}
+
+
+/* 5. IDENTITY STRIP */
+
+.identity-strip {
+    padding: 28px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--background-light);
+}
+
+.identity-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.identity-content span {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* 6. GENERAL SECTIONS */
+
+.section {
+    padding: 105px 0;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 55px;
+}
+
+.section-heading h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.section-heading h2 span {
+    color: var(--gold);
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* 7. ABOUT SECTION */
+
+.about-section {
+    background: var(--background);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text h3 {
+    font-family: var(--font-heading);
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 17px;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 18px;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 17px;
+}
+
+.about-card {
+    background: var(--card);
+    padding: 28px 22px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    transition: var(--transition);
+}
+
+.about-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+}
+
+.about-card i {
+    color: var(--gold);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.about-card h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.about-card p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+
+/* 8. EXPERTISE SECTION */
+
+.expertise-section {
+    background: var(--background-light);
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.expertise-card {
+    background: var(--card);
+    padding: 35px 27px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    transition: var(--transition);
+}
+
+.expertise-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-8px);
+}
+
+.expertise-card i {
+    font-size: 32px;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.expertise-card h3 {
+    font-family: var(--font-heading);
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.expertise-card p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+
+/* 9. PROJECTS SECTION */
+
+.projects-section {
+    background: var(--background);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.project-card {
+    padding: 30px 25px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+}
+
+.project-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(217,173,85,0.1);
+    border-radius: 10px;
+    color: var(--gold);
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.project-category {
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.project-card h3 {
+    font-family: var(--font-heading);
+    font-size: 21px;
+    margin: 12px 0;
+}
+
+.project-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.project-tags span {
+    padding: 6px 10px;
+    font-size: 10px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.06);
+    color: var(--gold-light);
+}
+
+
+/* 10. BUSINESS VENTURES */
+
+.ventures-section {
+    background: var(--background-light);
+}
+
+.ventures-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+}
+
+.venture-card {
+    background: var(--card);
+    padding: 42px 32px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.venture-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-6px);
+}
+
+.venture-icon {
+    color: var(--gold);
+    font-size: 35px;
+    margin-bottom: 22px;
+}
+
+.venture-card h3 {
+    font-family: var(--font-heading);
+    font-size: 23px;
+    margin-bottom: 14px;
+}
+
+.venture-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* 11. LITERATURE SECTION */
+
+.literature-section {
+    background:
+        linear-gradient(
+            120deg,
+            rgba(35,75,125,0.18),
+            transparent
+        ),
+        var(--background);
+}
+
+.literature-content {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding: 45px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 12px;
+}
+
+.literature-icon {
+    font-size: 65px;
+    color: var(--gold);
+}
+
+.literature-content h2 {
+    font-family: var(--font-heading);
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.literature-content h2 span {
+    color: var(--gold);
+}
+
+.literature-content p:last-child {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* 12. CONTACT SECTION */
+
+.contact-section {
+    background: var(--background-light);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.contact-card {
+    background: var(--card);
+    padding: 28px 18px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold);
+}
+
+.contact-card i {
+    font-size: 29px;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.contact-card h3 {
+    font-family: var(--font-heading);
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.contact-card p {
+    font-size: 12px;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+
+
+/* 13. FOOTER */
+
+.footer {
+    padding: 28px 0;
+    background: #050912;
+    border-top: 1px solid var(--border);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.back-to-top {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* 14. RESPONSIVE DESIGN - TABLETS */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero-content {
+        gap: 40px;
+    }
+
+    .expertise-grid,
+    .projects-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+
+/* 15. RESPONSIVE DESIGN - MOBILE */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        min-height: 72px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: var(--background-light);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 7%;
+        gap: 20px;
+        border-bottom: 1px solid var(--border);
+
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 65px 0;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons,
+    .social-links {
+        justify-content: center;
+    }
+
+    .hero-image {
+        max-width: 330px;
+        margin-top: 30px;
+    }
+
+    .identity-content {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .expertise-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ventures-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .literature-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+
+/* 16. SMALL MOBILE SCREENS */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 91%;
+    }
+
+    .hero-text h1 {
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .hero-text h2 {
+        font-size: 18px;
+    }
+
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .identity-content {
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .literature-content h2 {
+        font-size: 30px;
+    }
+
+    .btn {
+        padding: 12px 16px;
+    }
+
+}
+
+
+/* 17. ACCESSIBILITY */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+}
+
+::selection {
+    background: var(--gold);
+    color: #080d19;
+}
